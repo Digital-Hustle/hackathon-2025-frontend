@@ -1,0 +1,48 @@
+.mapgl-geolocate-control {
+  width: 32px;
+  box-shadow: 0 1px 3px 0 rgba(38, 38, 38, 0.5);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #fff;
+}
+
+.mapgl-geolocate-button {
+  padding: 0;
+  outline: 0;
+  border: none;
+  cursor: pointer;
+  background: #fff;
+  width: 32px;
+  height: 32px;
+  color: #262626;
+  box-sizing: border-box;
+}
+
+.mapgl-geolocate-button:hover {
+  opacity: 0.7;
+}
+
+.mapgl-geolocate-button:active {
+  color: #028eff;
+}
+
+.mapgl-geolocate-status {
+  font-size: 10px;
+  padding: 2px 4px;
+  color: #666;
+  text-align: center;
+}
+
+.mapgl-reset-button {
+  padding: 4px 10px;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px 0 rgba(38, 38, 38, 0.5);
+  border: none;
+  color: #000;
+  font-size: 12px;
+  cursor: pointer;
+  z-index: 1000;
+}

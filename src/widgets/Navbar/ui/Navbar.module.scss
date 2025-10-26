@@ -1,0 +1,64 @@
+@use "../../../app/styles/variables/global" as *;
+
+.navbar {
+  align-items: center;
+  background-color: var(--background-color);
+  border-radius: 24px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.12);
+  display: flex;
+  height: 72px;
+  margin-bottom: 16px;
+  max-width: 100%;
+  padding: 0 16px;
+  position: relative;
+}
+
+.title {
+  display: flex;
+  order: 1;
+  @include text-body-small;
+
+}
+
+.menu {
+  display: flex;
+  flex: 1 1;
+  height: 100%;
+  justify-content: center;
+  order: 2;
+}
+
+.nav {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  flex: 1 1;
+  justify-content: center;
+}
+
+.navItems {
+  margin-inline: 1rem;
+}
+
+.auth {
+  display: flex;
+  height: 100%;
+  order: 3;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+.links, .dropdown {
+  margin-left: auto;
+}
+
+.mainLink {
+  margin-right: 15px;
+}
+
+.appName {
+  width: var(--sidebar-width);
+  margin-left: 15px;
+}
+

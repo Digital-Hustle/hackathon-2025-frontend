@@ -1,0 +1,45 @@
+.LabelInput {
+  margin-block-end: 0.5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.WrapperInputs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.avatarWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.BadgeContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.marginBlock {
+  margin-block-start: 2rem;
+}
+
+.FieldGroupText {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-block-end: 0.5rem;
+  color: var(--text-color);
+}
+
+.FormButton {
+  width: 100%;
+  margin-block-start: 1.5rem;
+}

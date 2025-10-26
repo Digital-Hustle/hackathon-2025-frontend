@@ -1,0 +1,18 @@
+@mixin font(
+  $fontFamily: '',
+  $fontName: '',
+  $fontWeight: 400,
+  $fontStyle: normal,
+  $fontDisplay: swap
+) {
+  @font-face {
+    font-family: $fontFamily;
+    src: url("../../shared/assets/fonts/#{$fontName}/#{$fontWeight}.ttf") format('woff2');
+    font-style: $fontStyle;
+    font-weight: $fontWeight;
+    font-display: $fontDisplay;
+  }
+}
+
+@include font('Inter', 'inter', 400);
+@include font('Inter', 'inter', 500);

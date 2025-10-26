@@ -1,0 +1,21 @@
+.verticalContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.zIndex {
+  z-index: 150;
+}
+
+
+.map {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 0;
+}
+
+

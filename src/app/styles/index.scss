@@ -1,0 +1,40 @@
+@use "reset" as *;
+@use "variables/global" as *;
+@use "themes/normal" as *;
+@use "themes/dark" as *;
+@use "fonts";
+@use "typography";
+
+html {
+  font-size: 16px;
+  --main-font: 'Inter', 'Helvetica Neue', 'Arial';
+}
+
+body {
+  font: var(--font-m);
+  color: var(--text-color)
+}
+
+.app {
+  height: 100vh;
+  background-color: var(--main-color);
+  color: var(--text-color);
+  position: relative;
+}
+
+.content-page {
+  box-sizing: border-box;
+  height: 100%;
+  padding: 16px;
+}
+
+
+*::-webkit-scrollbar {
+  width: .375rem;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: .375rem;
+  background-color: rgba(0,0,0,0);
+  box-shadow: 0 0 1px hsla(0,0%,100%,.01);
+}

@@ -1,0 +1,43 @@
+.ThemeSwitcher {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 1rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  transition: all 200ms ease-in-out;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  white-space: nowrap;
+  user-select: none;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+  }
+  padding: 0.5rem 1rem;
+  min-height: 2.25rem;
+}
+
+.btnIcon {
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+}
+
+.btnGhost {
+  background-color: transparent;
+  color: var(--text-color);
+
+  &:hover:not(:disabled) {
+    background-color: var(--accent-color);
+  }
+}

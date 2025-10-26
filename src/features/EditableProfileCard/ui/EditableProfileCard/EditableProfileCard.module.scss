@@ -1,0 +1,18 @@
+.OnBoarding {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1rem;
+}
+
+.OnBoardingWrapper {
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  width: 100%;
+  max-width: 48rem;
+  padding: 2rem;
+  color: black;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  position: relative;
+  background-color: var(--background-color);
+}
