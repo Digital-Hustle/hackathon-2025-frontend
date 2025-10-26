@@ -2,11 +2,6 @@ import type { FormEvent } from "react";
 import { memo, useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-// import MailIcon from "@/shared/assets/icons/Mail-Icon.svg"
-// import PasswordIcon from "@/shared/assets/icons/Password-Icon.svg"
-//ico
-// import MailIcon from "@/shared/assets/icons/Mail-Icon.svg?react";
-// import PasswordIcon from "@/shared/assets/icons/Password-Icon.svg?react";
 import type { User } from "@/entities/User";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { DynamicModuleLoader } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
@@ -21,7 +16,6 @@ import { Tabs } from "@/shared/ui/Tabs/Tabs";
 import { Text } from "@/shared/ui/Text/Text";
 import * as cls from "./AuthForm.module.scss";
 import { getLoginConfirmPassword } from "../../model/selectors/getLoginConfrimPassword/getLoginConfirmPassword";
-// import { getLoginError } from "../../model/selectors/getLoginError/getLoginError";
 import { getLoginIsLoading } from "../../model/selectors/getLoginIsLoading/getLoginIsLoading";
 import { getLoginPassword } from "../../model/selectors/getLoginPassword/getLoginPassword";
 import { getLoginUsername } from "../../model/selectors/getLoginUsername/getLoginUsername";
@@ -45,7 +39,6 @@ const AuthForm = ({ className, onSuccess }: AuthFormProps) => {
 	const passwordState = useSelector(getLoginPassword);
 	const confirmPasswordState = useSelector(getLoginConfirmPassword);
 	const isLoading = useSelector(getLoginIsLoading);
-	// const error = useSelector(getLoginError);
 	const [isSubmitted, setIsSubmitted] = useState(false);
 	const [isRegistrationMode, setIsRegistrationMode] = useState(false);
 
@@ -237,24 +230,6 @@ const AuthForm = ({ className, onSuccess }: AuthFormProps) => {
 							className={classNames(cls.Form, {}, [className])}
 							onSubmit={onSubmit}
 						>
-							{/*{error && (*/}
-							{/*	<Text*/}
-							{/*		text={error}*/}
-							{/*		theme={TextTheme.ERROR}*/}
-							{/*	/>*/}
-							{/*)}*/}
-
-							{/*<Input*/}
-							{/*	placeholder={t("Электронная почта")}*/}
-							{/*	type="text"*/}
-							{/*	className={cls.input}*/}
-							{/*	value={username.value}*/}
-							{/*	onChange={username.onChange}*/}
-							{/*	onBlur={username.onBlur}*/}
-							{/*	theme={usernameInputTheme}*/}
-							{/*	// icon={MailIcon}*/}
-							{/*/>*/}
-
 							<Input
 								label={"Электронная почта"}
 								type="text"
@@ -264,26 +239,7 @@ const AuthForm = ({ className, onSuccess }: AuthFormProps) => {
 								onBlur={username.onBlur}
 								theme={usernameInputTheme}
 							/>
-							<div className={cls.errorWrapper}>
-								{/*{username.isDirty && !username.inputValid && (*/}
-								{/*	<Text*/}
-								{/*		text={username.errorText}*/}
-								{/*		theme={username.wasBlurred ? TextTheme.ERROR : TextTheme.NOTIFICATION}*/}
-								{/*	/>*/}
-								{/*)}*/}
-							</div>
-
-							{/*<Input*/}
-							{/*	placeholder={t("Пароль")}*/}
-							{/*	type="password"*/}
-							{/*	className={cls.input}*/}
-							{/*	value={password.value}*/}
-							{/*	onChange={password.onChange}*/}
-							{/*	onBlur={password.onBlur}*/}
-							{/*	theme={passwordInputTheme}*/}
-							{/*	// icon={PasswordIcon}*/}
-							{/*/>*/}
-
+							<div className={cls.errorWrapper}></div>
 							<Input
 								label={"Пароль"}
 								type="password"
@@ -293,28 +249,8 @@ const AuthForm = ({ className, onSuccess }: AuthFormProps) => {
 								onBlur={password.onBlur}
 								theme={passwordInputTheme}
 							/>
-							<div className={cls.errorWrapper}>
-								{/*{password.isDirty && !password.inputValid && (*/}
-								{/*	<Text*/}
-								{/*		text={password.errorText}*/}
-								{/*		theme={password.wasBlurred ? TextTheme.ERROR : TextTheme.NOTIFICATION}*/}
-								{/*	/>*/}
-								{/*)}*/}
-							</div>
+							<div className={cls.errorWrapper}></div>
 							<>
-								{/*<Input*/}
-								{/*	placeholder={t("Подтвердите пароль")}*/}
-								{/*	type="password"*/}
-								{/*	className={[*/}
-								{/*		cls.input,*/}
-								{/*		isRegistrationMode ? cls.animateInputVisible : cls.animateInputHidden,*/}
-								{/*	].join(" ")}*/}
-								{/*	value={confirmPassword.value}*/}
-								{/*	onChange={confirmPassword.onChange}*/}
-								{/*	onBlur={confirmPassword.onBlur}*/}
-								{/*	theme={confirmPasswordInputTheme}*/}
-								{/*	// icon={PasswordIcon}*/}
-								{/*/>*/}
 								<Input
 									label={"Подтвердите пароль"}
 									type="password"
@@ -327,14 +263,7 @@ const AuthForm = ({ className, onSuccess }: AuthFormProps) => {
 									onBlur={confirmPassword.onBlur}
 									theme={confirmPasswordInputTheme}
 								/>
-								<div className={cls.errorWrapper}>
-									{/*{confirmPassword.isDirty && !confirmPassword.inputValid && (*/}
-									{/*	<Text*/}
-									{/*		text={confirmPassword.errorText}*/}
-									{/*		theme={confirmPassword.wasBlurred ? TextTheme.ERROR : TextTheme.NOTIFICATION}*/}
-									{/*	/>*/}
-									{/*)}*/}
-								</div>
+								<div className={cls.errorWrapper}></div>
 							</>
 							<Button
 								theme={ButtonTheme.ACCENT}
@@ -348,106 +277,6 @@ const AuthForm = ({ className, onSuccess }: AuthFormProps) => {
 					</div>
 				</div>
 			</div>
-			{/*<div className={cls.wrapperloginform}>*/}
-			{/*	<Text*/}
-			{/*		theme={TextTheme.SECONDARY}*/}
-			{/*		title={isRegistrationMode ? t("Создайте аккаунт") : t("С возвращением")}*/}
-			{/*		size={TextSize.XL}*/}
-			{/*		text={*/}
-			{/*			isRegistrationMode*/}
-			{/*				? t("Это займет менее 1 минуты")*/}
-			{/*				: t("Пожалуйста, введите свои адрес электронной почты и пароль")*/}
-			{/*		}*/}
-			{/*	/>*/}
-			{/*	<div className={cls.TabsWrapper}>*/}
-			{/*		<Tabs*/}
-			{/*			tabs={typeTabs}*/}
-			{/*			value={isRegistrationMode ? "register" : "login"}*/}
-			{/*			onTabClick={onTabClick}*/}
-			{/*			className={classNames(cls.Tabs, {}, [className])}*/}
-			{/*		/>*/}
-			{/*	</div>*/}
-			{/*	<form*/}
-			{/*		className={classNames(cls.form, {}, [className])}*/}
-			{/*		onSubmit={onSubmit}*/}
-			{/*	>*/}
-			{/*		{error && (*/}
-			{/*			<Text*/}
-			{/*				text={error}*/}
-			{/*				theme={TextTheme.ERROR}*/}
-			{/*			/>*/}
-			{/*		)}*/}
-
-			{/*		<Input*/}
-			{/*			placeholder={t("Электронная почта")}*/}
-			{/*			type="text"*/}
-			{/*			className={cls.input}*/}
-			{/*			value={username.value}*/}
-			{/*			onChange={username.onChange}*/}
-			{/*			onBlur={username.onBlur}*/}
-			{/*			theme={usernameInputTheme}*/}
-			{/*			icon={MailIcon}*/}
-			{/*		/>*/}
-			{/*		<div className={cls.errorWrapper}>*/}
-			{/*			{username.isDirty && !username.inputValid && (*/}
-			{/*				<Text*/}
-			{/*					text={username.errorText}*/}
-			{/*					theme={username.wasBlurred ? TextTheme.ERROR : TextTheme.NOTIFICATION}*/}
-			{/*				/>*/}
-			{/*			)}*/}
-			{/*		</div>*/}
-
-			{/*		<Input*/}
-			{/*			placeholder={t("Пароль")}*/}
-			{/*			type="password"*/}
-			{/*			className={cls.input}*/}
-			{/*			value={password.value}*/}
-			{/*			onChange={password.onChange}*/}
-			{/*			onBlur={password.onBlur}*/}
-			{/*			theme={passwordInputTheme}*/}
-			{/*			icon={PasswordIcon}*/}
-			{/*		/>*/}
-			{/*		<div className={cls.errorWrapper}>*/}
-			{/*			{password.isDirty && !password.inputValid && (*/}
-			{/*				<Text*/}
-			{/*					text={password.errorText}*/}
-			{/*					theme={password.wasBlurred ? TextTheme.ERROR : TextTheme.NOTIFICATION}*/}
-			{/*				/>*/}
-			{/*			)}*/}
-			{/*		</div>*/}
-			{/*		<>*/}
-			{/*			<Input*/}
-			{/*				placeholder={t("Подтвердите пароль")}*/}
-			{/*				type="password"*/}
-			{/*				className={[*/}
-			{/*					cls.input,*/}
-			{/*					isRegistrationMode ? cls.animateInputVisible : cls.animateInputHidden,*/}
-			{/*				].join(" ")}*/}
-			{/*				value={confirmPassword.value}*/}
-			{/*				onChange={confirmPassword.onChange}*/}
-			{/*				onBlur={confirmPassword.onBlur}*/}
-			{/*				theme={confirmPasswordInputTheme}*/}
-			{/*				icon={PasswordIcon}*/}
-			{/*			/>*/}
-			{/*			<div className={cls.errorWrapper}>*/}
-			{/*				{confirmPassword.isDirty && !confirmPassword.inputValid && (*/}
-			{/*					<Text*/}
-			{/*						text={confirmPassword.errorText}*/}
-			{/*						theme={confirmPassword.wasBlurred ? TextTheme.ERROR : TextTheme.NOTIFICATION}*/}
-			{/*					/>*/}
-			{/*				)}*/}
-			{/*			</div>*/}
-			{/*		</>*/}
-			{/*		<Button*/}
-			{/*			theme={ButtonTheme.ACCENT}*/}
-			{/*			className={cls.authBtn}*/}
-			{/*			type="submit"*/}
-			{/*			disabled={isButtonDisabled}*/}
-			{/*		>*/}
-			{/*			{t("Продолжить")}*/}
-			{/*		</Button>*/}
-			{/*	</form>*/}
-			{/*</div>*/}
 		</DynamicModuleLoader>
 	);
 };

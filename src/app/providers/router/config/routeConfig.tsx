@@ -1,5 +1,5 @@
 import { Navigate } from "react-router-dom";
-import { AboutPage } from "@/pages/AboutPage";
+import { AboutPage } from "src/pages/TravelPage";
 import { AuthPage } from "@/pages/AuthPage";
 import { NotFoundPage } from "@/pages/NotFoundPage";
 import { OnBoardingPage } from "@/pages/OnBoardingPage";
@@ -12,7 +12,7 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
 		path: RoutePath.main,
 		element: (
 			<Navigate
-				to={RoutePath.auth}
+				to={RoutePath.travel}
 				replace
 			/>
 		),

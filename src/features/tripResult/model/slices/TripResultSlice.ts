@@ -1,31 +1,29 @@
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchEventsData } from "@/features/tripResult/model/services/fetchEventsData.ts";
-import type { TripResultSchema, TripRouteSchema } from "../types/TripRouteSchema.ts";
+import { fetchEventsData } from "@/features/tripResult/model/services/fetchEventsData";
+import type { TripResultSchema, TripRoute } from "../types/TripRouteSchema";
 
 const initialState: TripResultSchema = {
-	data: null,
 	isLoading: false,
-	error: null,
+	error: undefined,
+	data: undefined,
 };
 
 export const tripResultSlice = createSlice({
 	name: "tripResult",
 	initialState,
 	reducers: {
-		// Можно добавить очистку, если нужно
-		clearTripResult: (state) => {
-			state.data = null;
-			state.error = null;
+		clearTripResult: () => {
+			initialState;
 		},
 	},
 	extraReducers: (builder) => {
 		builder
 			.addCase(fetchEventsData.pending, (state) => {
-				state.error = null;
+				state.error = undefined;
 				state.isLoading = true;
 			})
-			.addCase(fetchEventsData.fulfilled, (state, action: PayloadAction<TripRouteSchema>) => {
+			.addCase(fetchEventsData.fulfilled, (state, action: PayloadAction<TripRoute>) => {
 				state.isLoading = false;
 				state.data = action.payload;
 			})

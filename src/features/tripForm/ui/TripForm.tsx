@@ -1,9 +1,8 @@
 import { memo, useCallback } from "react";
 import { useSelector } from "react-redux";
-import { RoutePointsForm } from "@/features/routePoints";
-// import { buildRoute } from "@/features/tripResult/model/services/buildRoute";
-import { getRoutePointsFromAddressCord } from "@/features/routePoints/model/selectors/getRoutePointsFromAddressCord/getRoutePointsFromAddressCord.ts";
+import { getRoutePointsFromAddressCord, RoutePointsForm } from "@/features/routePoints";
 import { getRoutePointsToAddressCords } from "@/features/routePoints/model/selectors/getRoutePointsToAddressCords/getRoutePointsToAddressCords.ts";
+import { fetchEventsData } from "@/features/tripResult/model/services/fetchEventsData.ts";
 import {
 	DynamicModuleLoader,
 	type ReducersList,
@@ -40,7 +39,6 @@ export const TripForm = memo(() => {
 	const routeType = useSelector(getRouteType);
 	const budgetIndex = BUDGET_OPTIONS.findIndex((opt) => opt.value === budget);
 
-	// Вспомогательные функции
 	const getBudgetColor = (budgetValue: string) => {
 		return BUDGET_OPTIONS.find((opt) => opt.value === budgetValue)?.color || "#42C23D";
 	};
@@ -87,19 +85,19 @@ export const TripForm = memo(() => {
 					categories = profileData.interest;
 				}
 			} catch (error) {
-				console.warn("Не удалось прочитать categories из localStorage", error);
+				console.log("нету categories в localStorage", error);
 			}
 
 			const requestData = {
-				startPoint: fromCoords,
-				endPoint: toCoords,
+				startPoint: [fromCoords.lat, fromCoords.lon] as [number, number],
+				endPoint: [toCoords.lat, toCoords.lon] as [number, number],
 				budget,
 				style: travelStyle,
 				categories,
 				routeType: routeType,
 			};
 
-			// dispatch(buildRoute(requestData));
+			dispatch(fetchEventsData(requestData));
 		},
 		[fromCoords, toCoords, budget, travelStyle, dispatch]
 	);
@@ -151,7 +149,6 @@ export const TripForm = memo(() => {
 					<div className={cls.BadgeContainer}>
 						{TRAVEL_STYLES.map((style) => {
 							const isSelected = travelStyle === style;
-							console.log(`  ${style}: isSelected =`, isSelected);
 							return (
 								<Badge
 									key={style}

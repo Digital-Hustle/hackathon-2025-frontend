@@ -1,27 +1,5 @@
 @use "../../../../app/styles/variables/global" as *;
 
-.wrapperLoginForm {
-  //display: flex;
-  //justify-content: center;
-  //align-items: center;
-  //min-height: 100vh;
-  //padding: 3rem 1rem;
-  //padding-left: 1rem;
-  //padding-right: 1rem;
-  //padding-top: 3rem;
-  //padding-bottom: 3rem;
-}
-
-.LoginForm {
-  //border-width: 1px;
-  //border-radius: 0.75rem;
-  //width: 100%;
-  //max-width: 28rem;
-  //padding: 2rem;
-  //color: black;
-  //box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 1px 2px 0 rgb(0 0 0 / 0.05);
-}
-
 .titleH {
   margin-block-end: 0.5rem;
 }
@@ -51,66 +29,6 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-//.wrapperloginform {
-//  overflow: hidden;
-//}
-//
-//.input {
-//  scale: 1;
-//}
-//
-//.loginBtn {
-//  margin-top: 15px;
-//  margin-left: auto;
-//}
-//
-//.TabsWrapper {
-//  display: flex;
-//  flex-direction: row;
-//  min-height: 6rem;
-//  width: 20rem;
-//  background-color: var(--main-color);
-//  align-items: center;
-//  justify-content: center;
-//  border-radius: 2rem;
-//  margin-block-start: 2.1rem;
-//}
-//
-//.form {
-//  padding-block: 2.5rem 0.5rem;
-//}
-//
-//.authBtn {
-//  @include text-button-large;
-//
-//  width: 34rem;
-//  margin-top: 1rem;
-//}
-//
-//.errorWrapper {
-//  height: 1.5rem;
-//  margin-bottom: 1rem;
-//}
-//
-//
-//.SocialWrapper {
-//  align-self: center;
-//  display: flex;
-//  align-items: center;
-//  justify-content: center;
-//  flex-direction: column;
-//}
-//
 .animateInputHidden {
   opacity: 0;
   visibility: hidden;

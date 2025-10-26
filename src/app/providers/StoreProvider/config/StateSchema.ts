@@ -1,12 +1,12 @@
 import type { UnknownAction, EnhancedStore, Reducer, ReducersMapObject } from "@reduxjs/toolkit";
 import type { CombinedState } from "@reduxjs/toolkit/query";
 import type { AxiosInstance } from "axios";
+import type { TripResultSchema } from "src/features/tripResult";
 import type { UserSchema } from "@/entities/User";
 import type { LoginSchema } from "@/features/AuthByUsername";
 import type { ProfileSchema } from "@/features/EditableProfileCard";
 import type { RoutePointsSchema } from "@/features/routePoints";
 import type { TripFormSchema } from "@/features/tripForm/model/types";
-import type { TripResultSchema } from "@/features/tripResult";
 import type { rtkApi } from "@/shared/api/rtkApi";
 import type { ScrollSaveSchema } from "@/widgets/Page/ScrollSave";
 

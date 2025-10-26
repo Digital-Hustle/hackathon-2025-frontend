@@ -55,7 +55,7 @@ export const EditableProfileCard = ({ className, id, isOnboarding }: EditablePro
 	);
 
 	useEffect(() => {
-		if (id) {
+		if (id && !isOnboarding) {
 			dispatch(fetchProfileData(id));
 		}
 	}, [dispatch, id]);

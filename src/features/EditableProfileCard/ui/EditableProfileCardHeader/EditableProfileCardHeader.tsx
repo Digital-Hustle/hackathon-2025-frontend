@@ -24,7 +24,6 @@ export const EditableProfileCardHeader = ({ className, isOnboarding }: EditableP
 	const authData = useSelector(getUserAuthData);
 	const profileData = useSelector(getProfileData);
 	const isMyPage = authData?.id === profileData?.id;
-	console.log("authData", authData);
 	const readonly = useSelector(getProfileReadonly);
 	const dispatch = useAppDispatch();
 	const navigate = useNavigate();
@@ -43,7 +42,7 @@ export const EditableProfileCardHeader = ({ className, isOnboarding }: EditableP
 
 	const onChat = useCallback(async () => {
 		if (!profileData?.id) {
-			console.warn("ID профиля не найден");
+			console.log("id нету");
 			return;
 		}
 

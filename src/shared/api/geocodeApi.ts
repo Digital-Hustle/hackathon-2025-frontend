@@ -36,22 +36,19 @@ export const geocodeAddressApi = async (address: string): Promise<{ lat: number;
 		const response = await fetch(url.toString());
 
 		if (!response.ok) {
-			console.warn(`[2GIS] HTTP error: ${response.status} for "${address}"`);
+			console.log(`2gis error: ${response.status} for "${address}"`);
 			return null;
 		}
 
 		const data: GeocodeResponse = await response.json();
-		console.log("data в целом", data);
 
 		if (data.meta.code !== 200 || data.result.total === 0 || !data.result.items[0]?.point) {
 			return null;
 		}
 
-		console.log("ответ от 2gis который юзаем : ", data.result.items[0].point);
-
 		return data.result.items[0].point;
 	} catch (error) {
-		console.error("[2GIS] Geocoding failed:", error);
+		console.error("2gis Geocoding failed:", error);
 		return null;
 	}
 };

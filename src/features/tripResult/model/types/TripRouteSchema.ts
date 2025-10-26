@@ -1,33 +1,31 @@
 export interface TripEvent {
 	id: string;
 	title: string;
-	date: string; // ISO 8601, например "2025-10-27T17:00:00"
-	duration: string; // ISO 8601 duration, например "PT2H"
+	date: string;
+	duration: string;
 	price: number;
 	ageRestriction: number;
 }
 
-// Место (place)
 export interface TripPlace {
 	id: string;
 	title: string;
 	latitude: number;
 	longitude: number;
 	address: string;
-	image: string | null;
+	image?: string;
 	events: TripEvent[];
 }
 
-// Ответ сервера — маршрут
-export interface TripRouteSchema {
+export interface TripRoute {
 	id: string;
 	places: TripPlace[];
 }
 
 export interface TripResultSchema {
-	data: TripRouteSchema | null;
+	data?: TripRoute;
 	isLoading: boolean;
-	error: string | null;
+	error?: string;
 }
 
 export interface BuildRouteParams {

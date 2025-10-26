@@ -15,7 +15,7 @@ export const tripFormSlice = createSlice({
 			state.budget = action.payload;
 		},
 		setTravelStyle: (state, action: PayloadAction<string>) => {
-			state.travelStyle = action.payload; // ← просто замена
+			state.travelStyle = action.payload;
 		},
 		setRouteType: (state, action: PayloadAction<RouteType>) => {
 			state.routeType = action.payload;

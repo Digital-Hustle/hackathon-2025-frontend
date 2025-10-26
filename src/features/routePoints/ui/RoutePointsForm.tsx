@@ -2,8 +2,6 @@ import { memo, useCallback, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { geocodeFromAddress } from "@/features/routePoints/model/services/geocodeAdress/geocodeAddress.ts";
 import { geocodeFromAddressTo } from "@/features/routePoints/model/services/geocodeAdressTo/geocodeAdressTo.ts";
-import type { ReducersList } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import { DynamicModuleLoader } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useDebounce } from "@/shared/lib/hooks/useDebounce/useDebounce.ts";
 import { Input } from "@/shared/ui/Input/Input.tsx";
@@ -11,15 +9,11 @@ import { Text } from "@/shared/ui/Text/Text";
 import * as cls from "./RoutePointsForm.module.scss";
 import { getRoutePointsFromAddress } from "../model/selectors/getRoutePointsFromAddress/getRoutePointsFromAddress.ts";
 import { getRoutePointsToAddress } from "../model/selectors/getRoutePointsToAddress/getRoutePointsToAddress.ts";
-import { routePointsActions, routePointsReducer } from "../model/slices/routePointsSlice.ts";
+import { routePointsActions } from "../model/slices/routePointsSlice.ts";
 
 export interface RoutePointsFormProps {
 	className?: string;
 }
-
-const reducers: ReducersList = {
-	routePoints: routePointsReducer,
-};
 
 const RoutePointsForm = ({ className }: RoutePointsFormProps) => {
 	const dispatch = useAppDispatch();
@@ -69,7 +63,7 @@ const RoutePointsForm = ({ className }: RoutePointsFormProps) => {
 	);
 
 	return (
-		<DynamicModuleLoader reducers={reducers}>
+		<>
 			<div className={cls.FieldGroup1}>
 				<Text
 					text={"Точки маршрута"}
@@ -108,7 +102,7 @@ const RoutePointsForm = ({ className }: RoutePointsFormProps) => {
 					/>
 				</div>
 			</div>
-		</DynamicModuleLoader>
+		</>
 	);
 };
 

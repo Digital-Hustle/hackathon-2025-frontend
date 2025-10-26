@@ -89,10 +89,8 @@ export const routePointsSlice = createSlice({
 			.addCase(reverseGeocode.fulfilled, (state, action) => {
 				state.isLoading = false;
 				if (state.from) {
-					state.from.address = action.payload; // action.payload — строка (адрес)
+					state.from.address = action.payload;
 				} else {
-					// Если to ещё не инициализирован — создаём объект с адресом и без координат
-					// (но лучше инициализировать to до вызова reverseGeocode)
 					state.from = {
 						address: action.payload,
 						coords: null,
@@ -114,10 +112,8 @@ export const routePointsSlice = createSlice({
 			.addCase(reverseGeocodeTo.fulfilled, (state, action) => {
 				state.isLoading = false;
 				if (state.to) {
-					state.to.address = action.payload; // action.payload — строка (адрес)
+					state.to.address = action.payload;
 				} else {
-					// Если to ещё не инициализирован — создаём объект с адресом и без координат
-					// (но лучше инициализировать to до вызова reverseGeocode)
 					state.to = {
 						address: action.payload,
 						coords: null,

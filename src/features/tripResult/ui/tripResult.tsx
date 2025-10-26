@@ -1,13 +1,38 @@
 import { useTranslation } from "react-i18next";
-import { classNames } from "@/shared/lib/classNames/classNames.ts";
-import * as cls from "./tripResult.module.scss";
+import { useSelector } from "react-redux";
+import { getTripPlaces } from "@/features/tripResult/model/selectors/getTripPlaces/getTripPlaces.ts";
+import { Card } from "@/shared/ui/Card/Card.tsx";
+import * as cls from "./TripResult.module.scss";
 
 interface tripResultProps {
 	className?: string;
 }
 
-export const tripResult = ({ className }: tripResultProps) => {
+export const TripResult = ({ className }: tripResultProps) => {
 	const { t } = useTranslation();
+	const result = useSelector(getTripPlaces);
 
-	return <div className={classNames(cls.tripResult, {}, [className])}></div>;
+	return (
+		<div>
+			{result.map((result, index) => (
+				<Card key={result.id}>
+					<div className={cls.resultContent}>
+						<div className={cls.resultImage}>
+							<img
+								src={result?.image}
+								alt={result.title}
+							/>
+						</div>
+
+						<div className={cls.resultInfo}>
+							<div className={cls.resultHeader}>
+								<div className={cls.resultNumber}>{index + 1}</div>
+								<h3 className={cls.resultName}>{result.title}</h3>
+							</div>
+						</div>
+					</div>
+				</Card>
+			))}
+		</div>
+	);
 };

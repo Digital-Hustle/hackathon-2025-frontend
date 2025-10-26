@@ -2,7 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import i18n from "i18next";
 import type { ThunkConfig } from "@/app/providers/StoreProvider";
 import type { User } from "@/entities/User";
-import { loginByUsername } from "@/features/AuthByUsername/model/services/loginByUsername/loginByUsername"; // импортируем ваш AuthService
+import { loginByUsername } from "@/features/AuthByUsername/model/services/loginByUsername/loginByUsername";
 import { AuthService } from "@/shared/api/authService";
 
 interface RegistrationProps {

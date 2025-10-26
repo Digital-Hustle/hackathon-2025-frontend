@@ -3,7 +3,6 @@
 
 interface ImportMetaEnv {
     readonly VITE_2GIS_API_KEY: string;
-    // другие VITE_ переменные...
 }
 
 interface ImportMeta {
