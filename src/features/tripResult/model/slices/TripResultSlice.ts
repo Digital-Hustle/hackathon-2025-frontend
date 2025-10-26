@@ -14,7 +14,7 @@ export const tripResultSlice = createSlice({
 	initialState,
 	reducers: {
 		clearTripResult: () => {
-			initialState;
+			return initialState;
 		},
 	},
 	extraReducers: (builder) => {

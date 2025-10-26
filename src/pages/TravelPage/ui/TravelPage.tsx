@@ -32,6 +32,7 @@ const TravelPage: React.FC = () => {
 	const handleResetRoute = () => {
 		dispatch(routePointsActions.clearRoutePoints());
 		dispatch(tripResultActions.clearTripResult());
+		console.log('clear')
 	};
 
 	const handleMapClick = (coords: { lat: number; lon: number }) => {
